@@ -13,9 +13,10 @@ export default class Result {
     const type = types[this.type];
 
     // TODO: Formatting for invalid/missing values, maybe change icon too?
+    // TODO: escape `uid` argument
 
     return `
-      <item arg="${this.type}" uid="${this.type}">
+      <item arg="${this.type}" uid="${this.value}">
         <title><![CDATA[${this.value}]]></title>
         <subtitle>${type}</subtitle>
       </item>

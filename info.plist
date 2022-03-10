@@ -6,6 +6,19 @@
 	<string>com.levibuzolic.encodedecode</string>
 	<key>connections</key>
 	<dict>
+		<key>2F09FB88-1083-492E-9EC3-E2D35C1C69C7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>30146241-489D-4A6E-8FB2-FB9C34E6BC0D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>48F47C79-01A7-4C1D-8239-1DAF1D54F7E6</key>
 		<array>
 			<dict>
@@ -14,7 +27,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Copy ":{query}:" to clipboard</string>
+				<string>Copy "{query}" to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -41,6 +54,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F09FB88-1083-492E-9EC3-E2D35C1C69C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>E3177611-6C51-4BC1-BE47-608823C1FE44</key>
 		<array>
@@ -59,11 +82,11 @@
 	<key>createdby</key>
 	<string>Levi Buzolic</string>
 	<key>description</key>
-	<string>Encode and decode HTML, Base64 and other data</string>
+	<string>Encode and decode HTML, Base64 and other data without any external dependencies</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Encode / Decode Ruby</string>
+	<string>Encode / Decode</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -94,7 +117,7 @@
 				<key>runningsubtext</key>
 				<string>Loading results...</string>
 				<key>script</key>
-				<string>ruby workflow.rb --decode "{query}"</string>
+				<string>./dist/alfred-encode-decode --decode "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -112,25 +135,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>48F47C79-01A7-4C1D-8239-1DAF1D54F7E6</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>:{query}:</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -166,49 +170,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>autopaste</key>
 				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
+				<key>clipboardtext</key>
+				<string>:{query}:</string>
+				<key>ignoredynamicplaceholders</key>
 				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>36</integer>
-				<key>keyword</key>
-				<string>encode</string>
-				<key>queuedelaycustom</key>
-				<integer>1</integer>
-				<key>queuedelayimmediatelyinitially</key>
+				<key>transient</key>
 				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading results...</string>
-				<key>script</key>
-				<string>ruby workflow.rb --encode "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Encode text</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>35BDE62C-5388-4B1F-8FF0-FE9B896F822D</string>
+			<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -254,6 +228,74 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>30146241-489D-4A6E-8FB2-FB9C34E6BC0D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>encode</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading results...</string>
+				<key>script</key>
+				<string>./dist/alfred-encode-decode --encode "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Encode text</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2F09FB88-1083-492E-9EC3-E2D35C1C69C7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -273,12 +315,19 @@
 			<key>ypos</key>
 			<real>70</real>
 		</dict>
-		<key>35BDE62C-5388-4B1F-8FF0-FE9B896F822D</key>
+		<key>2F09FB88-1083-492E-9EC3-E2D35C1C69C7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>305</integer>
+			<integer>300</integer>
 			<key>ypos</key>
-			<integer>205</integer>
+			<integer>400</integer>
+		</dict>
+		<key>30146241-489D-4A6E-8FB2-FB9C34E6BC0D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>575</integer>
+			<key>ypos</key>
+			<integer>400</integer>
 		</dict>
 		<key>48F47C79-01A7-4C1D-8239-1DAF1D54F7E6</key>
 		<dict>
