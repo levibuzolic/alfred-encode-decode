@@ -1,20 +1,12 @@
-import encode from "./encode";
-import decode from "./decode";
+import Process from "./process";
+import type { Mode } from "types";
 
 try {
-  const [_script, mode, ...values] = scriptArgs;
-  const isEncodeMode = /encode/i.test(mode);
+  const [_script, modeArg, ...values] = scriptArgs;
+  const mode: Mode = /encode/i.test(modeArg) ? "encode" : "decode";
   const value = values.join(" ");
-  const handler = isEncodeMode ? encode : decode;
-  const items = handler(value).filter(
-    (result) => result.valid && result.value !== value
-  );
-  console.log(`
-    <?xml version='1.0'?>
-    <items>
-      ${items.map((item) => item.xml).join("\n")}
-    </items>
-  `);
+  const result = new Process(mode, value);
+  console.log(result.xml);
 } catch (error) {
   console.log(error);
 }

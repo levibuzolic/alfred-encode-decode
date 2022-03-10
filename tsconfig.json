@@ -20,6 +20,6 @@
     "noEmit": true,
     "typeRoots": ["types", "node_modules/@types"]
   },
-  "lib": ["node", "es2021", "jest"],
+  "lib": ["es2021", "jest"],
   "exclude": ["build/**/*.js", "quickjs/**/*.js", "dist/**/*.js"]
 }
