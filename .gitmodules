@@ -1,0 +1,6 @@
+[submodule "quickjs"]
+	path = quickjs
+	url = git@github.com:bellard/quickjs.git
+[submodule "types/quickjs"]
+	path = types/quickjs
+	url = git@github.com:mgred/quickjs-types.git

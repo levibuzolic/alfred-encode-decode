@@ -1,10 +1,8 @@
 import encode from "./encode";
 import decode from "./decode";
 
-console.log(JSON.stringify(scriptArgs));
-
 try {
-  const [mode, ...values] = process.argv;
+  const [_script, mode, ...values] = scriptArgs;
   const isEncodeMode = /encode/i.test(mode);
   const value = values.join(" ");
   const handler = isEncodeMode ? encode : decode;
