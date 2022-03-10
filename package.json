@@ -9,7 +9,7 @@
   "scripts": {
     "make": "pushd quickjs && make && popd",
     "dev": "esbuild index.ts --bundle --platform=node --outfile=build/index.js",
-    "prebuild": "rm -rf dist build",
+    "prebuild": "rm -rf dist/* build/*",
     "build": "esbuild index.ts --bundle --platform=node --minify --outfile=build/index.js",
     "postbuild": "./quickjs/qjsc -o dist/alfred-encode-decode build/index.js",
     "test": "jest"
