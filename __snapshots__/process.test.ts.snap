@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`decode input:  1`] = `
+Object {
+  "items": Array [
+    Object {
+      "arg": "",
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "Base64",
+      "title": "No Result",
+      "valid": false,
+    },
+    Object {
+      "arg": "",
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "Base64 URL Safe",
+      "title": "No Result",
+      "valid": false,
+    },
+    Object {
+      "arg": "",
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "HTML Entities",
+      "title": "No Result",
+      "valid": false,
+    },
+  ],
+}
+`;
+
 exports[`decode input: SGVsbG8= 1`] = `
 Object {
   "items": Array [
@@ -39,6 +73,31 @@ Object {
       "valid": true,
     },
     Object {
+      "arg": undefined,
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "Base64",
+      "title": "No Result",
+      "valid": false,
+    },
+    Object {
+      "arg": undefined,
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "Base64 URL Safe",
+      "title": "No Result",
+      "valid": false,
+    },
+  ],
+}
+`;
+
+exports[`encode input:  1`] = `
+Object {
+  "items": Array [
+    Object {
       "arg": "",
       "icon": Object {
         "path": "/mock/cwd/invalid.png",
@@ -53,6 +112,15 @@ Object {
         "path": "/mock/cwd/invalid.png",
       },
       "subtitle": "Base64 URL Safe",
+      "title": "No Result",
+      "valid": false,
+    },
+    Object {
+      "arg": "",
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "HTML Entities",
       "title": "No Result",
       "valid": false,
     },
