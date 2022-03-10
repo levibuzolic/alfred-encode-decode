@@ -23,17 +23,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Copy "{query}" to clipboard</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>E3177611-6C51-4BC1-BE47-608823C1FE44</string>
+				<string>3E3B729F-068C-418D-AE0E-FE05806B2253</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -65,19 +55,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E3177611-6C51-4BC1-BE47-608823C1FE44</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>143B793E-A860-474A-8BE3-F88BCEB134E1</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Levi Buzolic</string>
@@ -89,6 +66,25 @@
 	<string>Encode / Decode</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>3E3B729F-068C-418D-AE0E-FE05806B2253</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -173,67 +169,6 @@
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
-				<string>:{query}:</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>ruby emoji_to_symbol.rb "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E3177611-6C51-4BC1-BE47-608823C1FE44</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>143B793E-A860-474A-8BE3-F88BCEB134E1</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
 				<string>{query}</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
@@ -301,54 +236,40 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>143B793E-A860-474A-8BE3-F88BCEB134E1</key>
-		<dict>
-			<key>xpos</key>
-			<integer>700</integer>
-			<key>ypos</key>
-			<real>210</real>
-		</dict>
-		<key>2404AE08-D4CF-4265-B7BB-44043DD356DD</key>
-		<dict>
-			<key>xpos</key>
-			<integer>700</integer>
-			<key>ypos</key>
-			<real>70</real>
-		</dict>
 		<key>2F09FB88-1083-492E-9EC3-E2D35C1C69C7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>305</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>180</integer>
 		</dict>
 		<key>30146241-489D-4A6E-8FB2-FB9C34E6BC0D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>575</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>180</integer>
+		</dict>
+		<key>3E3B729F-068C-418D-AE0E-FE05806B2253</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>70</integer>
 		</dict>
 		<key>48F47C79-01A7-4C1D-8239-1DAF1D54F7E6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>305</integer>
 			<key>ypos</key>
 			<integer>70</integer>
 		</dict>
 		<key>E1633402-43A3-4B78-91D0-8A3EE378C20E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>100</integer>
+			<integer>115</integer>
 			<key>ypos</key>
-			<real>70</real>
-		</dict>
-		<key>E3177611-6C51-4BC1-BE47-608823C1FE44</key>
-		<dict>
-			<key>xpos</key>
-			<integer>500</integer>
-			<key>ypos</key>
-			<real>210</real>
+			<integer>120</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
