@@ -1,157 +1,148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`decode input:  1`] = `
-Object {
-  "items": Array [
-    Object {
-      "arg": "",
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+exports[`decode input: "" 1`] = `
+"{
+  \\"items\\": [
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64\\",
+      \\"arg\\": \\"\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "Base64",
-      "title": "No Result",
-      "valid": false,
+      \\"valid\\": false
     },
-    Object {
-      "arg": "",
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64 URL Safe\\",
+      \\"arg\\": \\"\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "Base64 URL Safe",
-      "title": "No Result",
-      "valid": false,
+      \\"valid\\": false
     },
-    Object {
-      "arg": "",
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"HTML Entities\\",
+      \\"arg\\": \\"\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "HTML Entities",
-      "title": "No Result",
-      "valid": false,
-    },
-  ],
-}
+      \\"valid\\": false
+    }
+  ]
+}"
 `;
 
-exports[`decode input: SGVsbG8= 1`] = `
-Object {
-  "items": Array [
-    Object {
-      "arg": "Hello",
-      "icon": undefined,
-      "subtitle": "Base64",
-      "title": "Hello",
-      "valid": true,
+exports[`decode input: "SGVsbG8=" 1`] = `
+"{
+  \\"items\\": [
+    {
+      \\"title\\": \\"Hello\\",
+      \\"subtitle\\": \\"Base64\\",
+      \\"arg\\": \\"Hello\\",
+      \\"valid\\": true
     },
-    Object {
-      "arg": "Hello",
-      "icon": undefined,
-      "subtitle": "Base64 URL Safe",
-      "title": "Hello",
-      "valid": true,
+    {
+      \\"title\\": \\"Hello\\",
+      \\"subtitle\\": \\"Base64 URL Safe\\",
+      \\"arg\\": \\"Hello\\",
+      \\"valid\\": true
     },
-    Object {
-      "arg": "SGVsbG8=",
-      "icon": undefined,
-      "subtitle": "HTML Entities",
-      "title": "SGVsbG8=",
-      "valid": true,
-    },
-  ],
-}
+    {
+      \\"title\\": \\"SGVsbG8=\\",
+      \\"subtitle\\": \\"HTML Entities\\",
+      \\"arg\\": \\"SGVsbG8=\\",
+      \\"valid\\": true
+    }
+  ]
+}"
 `;
 
-exports[`decode input: x 1`] = `
-Object {
-  "items": Array [
-    Object {
-      "arg": "x",
-      "icon": undefined,
-      "subtitle": "HTML Entities",
-      "title": "x",
-      "valid": true,
+exports[`decode input: "x" 1`] = `
+"{
+  \\"items\\": [
+    {
+      \\"title\\": \\"x\\",
+      \\"subtitle\\": \\"HTML Entities\\",
+      \\"arg\\": \\"x\\",
+      \\"valid\\": true
     },
-    Object {
-      "arg": undefined,
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "Base64",
-      "title": "No Result",
-      "valid": false,
+      \\"valid\\": false
     },
-    Object {
-      "arg": undefined,
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64 URL Safe\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "Base64 URL Safe",
-      "title": "No Result",
-      "valid": false,
-    },
-  ],
-}
+      \\"valid\\": false
+    }
+  ]
+}"
 `;
 
-exports[`encode input:  1`] = `
-Object {
-  "items": Array [
-    Object {
-      "arg": "",
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+exports[`encode input: "" 1`] = `
+"{
+  \\"items\\": [
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64\\",
+      \\"arg\\": \\"\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "Base64",
-      "title": "No Result",
-      "valid": false,
+      \\"valid\\": false
     },
-    Object {
-      "arg": "",
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64 URL Safe\\",
+      \\"arg\\": \\"\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "Base64 URL Safe",
-      "title": "No Result",
-      "valid": false,
+      \\"valid\\": false
     },
-    Object {
-      "arg": "",
-      "icon": Object {
-        "path": "/mock/cwd/invalid.png",
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"HTML Entities\\",
+      \\"arg\\": \\"\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
       },
-      "subtitle": "HTML Entities",
-      "title": "No Result",
-      "valid": false,
-    },
-  ],
-}
+      \\"valid\\": false
+    }
+  ]
+}"
 `;
 
-exports[`encode input: Hello 1`] = `
-Object {
-  "items": Array [
-    Object {
-      "arg": "SGVsbG8=",
-      "icon": undefined,
-      "subtitle": "Base64",
-      "title": "SGVsbG8=",
-      "valid": true,
+exports[`encode input: "Hello" 1`] = `
+"{
+  \\"items\\": [
+    {
+      \\"title\\": \\"SGVsbG8=\\",
+      \\"subtitle\\": \\"Base64\\",
+      \\"arg\\": \\"SGVsbG8=\\",
+      \\"valid\\": true
     },
-    Object {
-      "arg": "SGVsbG8",
-      "icon": undefined,
-      "subtitle": "Base64 URL Safe",
-      "title": "SGVsbG8",
-      "valid": true,
+    {
+      \\"title\\": \\"SGVsbG8\\",
+      \\"subtitle\\": \\"Base64 URL Safe\\",
+      \\"arg\\": \\"SGVsbG8\\",
+      \\"valid\\": true
     },
-    Object {
-      "arg": "Hello",
-      "icon": undefined,
-      "subtitle": "HTML Entities",
-      "title": "Hello",
-      "valid": true,
-    },
-  ],
-}
+    {
+      \\"title\\": \\"Hello\\",
+      \\"subtitle\\": \\"HTML Entities\\",
+      \\"arg\\": \\"Hello\\",
+      \\"valid\\": true
+    }
+  ]
+}"
 `;
