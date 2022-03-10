@@ -2,9 +2,27 @@
 
 ## Development
 
+#### Running
+
 ```bash
-deno run index.ts --encode "Encode this string"
-deno run index.ts --decode "&hellip;"
+yarn dev --encode "Hello"
 ```
 
-Compile to a self contained release binary with `deno compile --output encodedecode index.ts`
+#### Tests
+
+```bash
+yarn test
+```
+
+#### Compile QuickJS
+
+```bash
+yarn make
+```
+
+#### Compile Binary
+
+```bash
+yarn build
+./dist/alfred-encode-decode --encode "Hello"
+```
