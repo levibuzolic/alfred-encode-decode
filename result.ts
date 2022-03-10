@@ -1,4 +1,4 @@
-import { types, type Type } from "./types";
+import { types, type Type } from './types';
 
 export default class Result {
   type: Type;
@@ -16,7 +16,7 @@ export default class Result {
     // TODO: escape `arg` argument
 
     return `
-      <item arg="${this.value}" uid="${this.type}">
+      <item arg="${this.#clipboard}" uid="${this.type}">
         <title><![CDATA[${this.value}]]></title>
         <subtitle>${type}</subtitle>
       </item>
@@ -25,6 +25,15 @@ export default class Result {
 
   get valid(): boolean {
     const value = this.value;
-    return value != null && value.trim() !== "";
+    return value != null && value.trim() !== '';
+  }
+
+  get #clipboard(): string {
+    return (this.value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
   }
 }

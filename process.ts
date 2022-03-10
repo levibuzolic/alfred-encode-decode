@@ -1,9 +1,9 @@
-import base64 from "base-64";
-import Result from "./result";
-import type { Encoders, Mode, Type } from "./types";
+import base64 from 'base-64';
+import Result from './result';
+import type { Encoders, Mode, Type } from './types';
 
 const encoders: Encoders = [
-  { type: "base64", encode: base64.encode, decode: base64.decode },
+  { type: 'base64', encode: base64.encode, decode: base64.decode },
 ];
 
 export default class Process {
@@ -39,7 +39,7 @@ export default class Process {
     return `
       <?xml version='1.0'?>
       <items>
-        ${this.results.map((result) => result.xml).join("\n")}
+        ${this.results.map((result) => result.xml).join('\n')}
       </items>
     `;
   }
