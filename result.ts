@@ -1,4 +1,5 @@
 import { types, type Type } from './types';
+import { encode } from 'html-entities';
 
 export default class Result {
   type: Type;
@@ -29,11 +30,6 @@ export default class Result {
   }
 
   get #clipboard(): string {
-    return (this.value ?? '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;');
+    return encode(this.value ?? '', { level: 'xml' });
   }
 }

@@ -1,9 +1,13 @@
-import base64 from 'base-64';
 import Result from './result';
+import base64 from 'base-64';
+import base64url from './base64url';
+import * as html from 'html-entities';
 import type { Encoders, Mode, Type } from './types';
 
 const encoders: Encoders = [
   { type: 'base64', encode: base64.encode, decode: base64.decode },
+  { type: 'base64url', encode: base64url.encode, decode: base64url.decode },
+  { type: 'html_entities', encode: html.encode, decode: html.decode },
 ];
 
 export default class Process {
