@@ -8,10 +8,10 @@
   "license": "MIT",
   "scripts": {
     "make": "pushd quickjs && make && popd",
-    "dev": "esbuild index.ts --bundle --platform=node --outfile=build/index.js",
-    "prebuild": "rm -rf dist/* build/*",
-    "build": "esbuild index.ts --bundle --platform=node --minify --outfile=build/index.js",
-    "postbuild": "./quickjs/qjsc -o dist/alfred-encode-decode build/index.js",
+    "dev": "esbuild index.ts --bundle --platform=node --outfile=dist/index.js",
+    "prebuild": "rm -rf dist/*",
+    "build": "esbuild index.ts --bundle --platform=node --minify --outfile=dist/index.js",
+    "postbuild": "./quickjs/qjsc -o dist/alfred-encode-decode dist/index.js",
     "test": "jest"
   },
   "devDependencies": {
