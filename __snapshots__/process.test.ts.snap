@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`decode input: SGVsbG8= 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "arg": "Hello",
+      "icon": undefined,
+      "subtitle": "Base64",
+      "title": "Hello",
+      "valid": true,
+    },
+    Object {
+      "arg": "Hello",
+      "icon": undefined,
+      "subtitle": "Base64 URL Safe",
+      "title": "Hello",
+      "valid": true,
+    },
+    Object {
+      "arg": "SGVsbG8=",
+      "icon": undefined,
+      "subtitle": "HTML Entities",
+      "title": "SGVsbG8=",
+      "valid": true,
+    },
+  ],
+}
+`;
+
+exports[`decode input: x 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "arg": "x",
+      "icon": undefined,
+      "subtitle": "HTML Entities",
+      "title": "x",
+      "valid": true,
+    },
+    Object {
+      "arg": "",
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "Base64",
+      "title": "No Result",
+      "valid": false,
+    },
+    Object {
+      "arg": "",
+      "icon": Object {
+        "path": "/mock/cwd/invalid.png",
+      },
+      "subtitle": "Base64 URL Safe",
+      "title": "No Result",
+      "valid": false,
+    },
+  ],
+}
+`;
+
+exports[`encode input: Hello 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "arg": "SGVsbG8=",
+      "icon": undefined,
+      "subtitle": "Base64",
+      "title": "SGVsbG8=",
+      "valid": true,
+    },
+    Object {
+      "arg": "SGVsbG8",
+      "icon": undefined,
+      "subtitle": "Base64 URL Safe",
+      "title": "SGVsbG8",
+      "valid": true,
+    },
+    Object {
+      "arg": "Hello",
+      "icon": undefined,
+      "subtitle": "HTML Entities",
+      "title": "Hello",
+      "valid": true,
+    },
+  ],
+}
+`;

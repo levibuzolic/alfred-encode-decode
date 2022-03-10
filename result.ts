@@ -1,35 +1,42 @@
-import { types, type Type } from './types';
-import { encode } from 'html-entities';
+import type { ScriptFilterItem } from './types';
+import type { EncoderType } from './encoders';
+import { cwd } from './qjs';
 
 export default class Result {
-  type: Type;
-  value: string | undefined;
+  constructor(
+    private type: EncoderType,
+    private value?: string | undefined,
+    private error?: Error | unknown
+  ) {}
 
-  constructor(type: Type, value?: string) {
-    this.type = type;
-    this.value = value;
-  }
-
-  get xml(): string {
-    const type = types[this.type];
-
-    // TODO: Formatting for invalid/missing values, maybe change icon too?
-    // TODO: escape `arg` argument
-
-    return `
-      <item arg="${this.#clipboard}" uid="${this.type}">
-        <title><![CDATA[${this.value}]]></title>
-        <subtitle>${type}</subtitle>
-      </item>
-    `;
+  get item(): ScriptFilterItem {
+    return {
+      // Sets the order
+      // uid: this.type,
+      title: this.title,
+      subtitle: this.subtitle,
+      arg: this.clipboard,
+      icon: this.valid ? undefined : { path: `${cwd()}/invalid.png` },
+      valid: this.valid,
+    };
   }
 
   get valid(): boolean {
+    if (this.error) return false;
     const value = this.value;
     return value != null && value.trim() !== '';
   }
 
-  get #clipboard(): string {
-    return encode(this.value ?? '', { level: 'xml' });
+  private get subtitle(): string {
+    return this.type.name;
+  }
+
+  private get title(): string {
+    if (!this.valid) return 'No Result';
+    return this.value ?? '';
+  }
+
+  private get clipboard() {
+    return this.value;
   }
 }

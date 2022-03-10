@@ -1,36 +1,29 @@
 import Result from './result';
-import base64 from 'base-64';
-import base64url from './base64url';
-import * as html from 'html-entities';
-import type { Encoders, Mode, Type } from './types';
-
-const encoders: Encoders = [
-  { type: 'base64', encode: base64.encode, decode: base64.decode },
-  { type: 'base64url', encode: base64url.encode, decode: base64url.decode },
-  { type: 'html_entities', encode: html.encode, decode: html.decode },
-];
+import { encoders } from './encoders';
+import type { Mode, ScriptFilters } from './types';
 
 export default class Process {
   #errors: (Error | unknown)[] = [];
   #mode: Mode;
   #value: string;
-  results: Result[];
+  #results: Result[];
 
   constructor(mode: Mode, value: string) {
     this.#mode = mode;
     this.#value = value;
-    this.results = this.run();
+    this.#results = this.#run();
   }
 
-  run(): Result[] {
+  #run(): Result[] {
     const results = encoders.map((encoder) => {
+      let result: string | undefined;
+      let error: Error | unknown | undefined;
       try {
-        const result = encoder[this.#mode](this.#value);
-        return new Result(encoder.type, result);
-      } catch (error) {
-        this.#errors.push(error);
-        return new Result(encoder.type);
+        result = encoder[this.#mode](this.#value);
+      } catch (e) {
+        error = e;
       }
+      return new Result(encoder, result, error);
     });
 
     const valid = results.filter((result) => result.valid);
@@ -39,21 +32,11 @@ export default class Process {
     return [...valid, ...invalid];
   }
 
-  get xml(): string {
-    return `
-      <?xml version='1.0'?>
-      <items>
-        ${this.results.map((result) => result.xml).join('\n')}
-      </items>
-    `;
+  get scriptFilters(): ScriptFilters {
+    return { items: this.#results.map((result) => result.item) };
   }
 
-  get entries(): [Type, string | undefined][] {
-    return this.results.map((result) => [result.type, result.value]);
-  }
-
-  get errors(): void | (Error | unknown)[] {
-    if (this.#errors.length === 0) return;
-    return this.#errors;
+  get json(): string {
+    return JSON.stringify(this.scriptFilters, null, 2);
   }
 }

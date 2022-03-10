@@ -1,7 +1,23 @@
 import Process from './process';
 
-test('process', () => {
-  expect(new Process('decode', 'SGVsbG8=').entries).toEqual([
-    ['base64', 'Hello'],
-  ]);
+jest.mock('./qjs', () => ({
+  cwd: () => '/mock/cwd',
+}));
+
+describe('decode', () => {
+  ['SGVsbG8=', 'x'].forEach((input) => {
+    test(`input: ${input}`, () => {
+      const result = new Process('decode', input);
+      expect(result.scriptFilters).toMatchSnapshot();
+    });
+  });
+});
+
+describe('encode', () => {
+  ['Hello'].forEach((input) => {
+    test(`input: ${input}`, () => {
+      const result = new Process('encode', input);
+      expect(result.scriptFilters).toMatchSnapshot();
+    });
+  });
 });
