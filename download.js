@@ -5,7 +5,12 @@ import https from 'https';
 import { mkdirSync, rmSync, renameSync } from 'fs';
 import { execSync } from 'child_process';
 import glob from 'glob';
-const log = (...args) => console.log('ℹ️ ', ...args);
+
+const reset = '\x1b[0m';
+const red = '\x1b[31m';
+const cyan = '\x1b[36m';
+
+const log = (...args) => console.log('ℹ️ ', cyan, ...args, reset);
 
 function fetchJSON(urlOrOptions) {
   return new Promise((resolve, reject) => {
@@ -23,8 +28,8 @@ function fetchJSON(urlOrOptions) {
 
 const run = (command) =>
   execSync(command, (error, stdout, stderr) => {
-    if (stdout) console.log(stdout);
-    if (stderr) console.error(stderr);
+    if (stdout) console.log(reset, stdout);
+    if (stderr) console.error(red, stderr, reset);
   });
 
 log('Fetching bottle list...');
@@ -65,6 +70,7 @@ const archs = Object.keys(bottles);
   const inputs = archs.map((arch) => bottles[arch].binaries[bin]);
   log(`Creating universal binary for ${bin}...`);
   run(`lipo -create ${inputs.join(' ')} -o ./quickjs/${bin}`);
+  // To get the arch format of a binary: lipo -archs ./quickjs/qjs
 });
 
 log('Cleaning up...');

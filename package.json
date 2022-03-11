@@ -12,7 +12,6 @@
     "dev": "./quickjs/qjs dist/index.mjs",
     "prebuild": "rm -rf dist/*",
     "build": "esbuild index.ts --bundle --platform=node --format=esm --external:os,std --outfile=dist/index.mjs",
-    "postbuild": "./quickjs/qjsc -o dist/run dist/index.mjs",
     "test": "jest"
   },
   "jest": {
