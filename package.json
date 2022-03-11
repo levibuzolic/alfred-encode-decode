@@ -7,7 +7,7 @@
   "author": "Levi Buzolic <levibuzolic@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "make": "pushd quickjs && make && popd",
+    "download": "node ./download.js",
     "predev": "build",
     "dev": "./quickjs/qjs dist/index.mjs",
     "prebuild": "rm -rf dist/*",
@@ -31,6 +31,7 @@
     "@types/base-64": "^1.0.0",
     "@types/jest": "^27.4.1",
     "esbuild": "^0.14.25",
+    "glob": "^7.2.0",
     "jest": "^27.5.1",
     "typescript": "^4.6.2"
   },
