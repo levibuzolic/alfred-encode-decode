@@ -3,7 +3,6 @@ import { encoders } from './encoders';
 import type { Mode, ScriptFilters } from './types';
 
 export default class Process {
-  #errors: (Error | unknown)[] = [];
   #mode: Mode;
   #value: string;
   #results: Result[];
@@ -38,5 +37,9 @@ export default class Process {
 
   get json(): string {
     return JSON.stringify(this.scriptFilters, null, 2);
+  }
+
+  get errors(): { name: string; error: Error | unknown }[] {
+    return this.#results.filter((r) => r.error != null).map(({ name, error }) => ({ name, error }));
   }
 }

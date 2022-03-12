@@ -59,6 +59,35 @@ exports[`decode input: "SGVsbG8=" 1`] = `
 }"
 `;
 
+exports[`decode input: "https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B" 1`] = `
+"{
+  \\"items\\": [
+    {
+      \\"title\\": \\"https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B\\",
+      \\"subtitle\\": \\"HTML Entities\\",
+      \\"arg\\": \\"https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B\\",
+      \\"valid\\": true
+    },
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
+      },
+      \\"valid\\": false
+    },
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64 URL Safe\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
+      },
+      \\"valid\\": false
+    }
+  ]
+}"
+`;
+
 exports[`decode input: "x" 1`] = `
 "{
   \\"items\\": [
@@ -142,6 +171,35 @@ exports[`encode input: "Hello" 1`] = `
       \\"subtitle\\": \\"HTML Entities\\",
       \\"arg\\": \\"Hello\\",
       \\"valid\\": true
+    }
+  ]
+}"
+`;
+
+exports[`encode input: "https://mozilla.org/?x=шеллы" 1`] = `
+"{
+  \\"items\\": [
+    {
+      \\"title\\": \\"https://mozilla.org/?x=шеллы\\",
+      \\"subtitle\\": \\"HTML Entities\\",
+      \\"arg\\": \\"https://mozilla.org/?x=шеллы\\",
+      \\"valid\\": true
+    },
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
+      },
+      \\"valid\\": false
+    },
+    {
+      \\"title\\": \\"No Result\\",
+      \\"subtitle\\": \\"Base64 URL Safe\\",
+      \\"icon\\": {
+        \\"path\\": \\"/mock/cwd/invalid.png\\"
+      },
+      \\"valid\\": false
     }
   ]
 }"

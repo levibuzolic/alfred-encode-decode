@@ -3,11 +3,7 @@ import type { EncoderType } from './encoders';
 import { cwd } from './qjs';
 
 export default class Result {
-  constructor(
-    private type: EncoderType,
-    private value?: string | undefined,
-    private error?: Error | unknown
-  ) {}
+  constructor(private type: EncoderType, private value?: string | undefined, public error?: Error | unknown) {}
 
   get item(): ScriptFilterItem {
     return {
@@ -27,8 +23,12 @@ export default class Result {
     return value != null && value.trim() !== '';
   }
 
-  private get subtitle(): string {
+  get name(): string {
     return this.type.name;
+  }
+
+  private get subtitle(): string {
+    return this.name;
   }
 
   private get title(): string {

@@ -5,7 +5,7 @@ jest.mock('./qjs', () => ({
 }));
 
 describe('decode', () => {
-  ['SGVsbG8=', 'x', ''].forEach((input) => {
+  ['SGVsbG8=', 'x', '', 'https://mozilla.org/?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B'].forEach((input) => {
     test(`input: "${input}"`, () => {
       const result = new Process('decode', input);
       expect(result.json).toMatchSnapshot();
@@ -14,7 +14,7 @@ describe('decode', () => {
 });
 
 describe('encode', () => {
-  ['Hello', ''].forEach((input) => {
+  ['Hello', '', 'https://mozilla.org/?x=шеллы'].forEach((input) => {
     test(`input: "${input}"`, () => {
       const result = new Process('encode', input);
       expect(result.json).toMatchSnapshot();
