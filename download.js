@@ -2,7 +2,7 @@
 // curl -L -H "Authorization: Bearer QQ==" -o x.tar.gz https://ghcr.io/v2/homebrew/core/NAME/blobs/sha256:HASH
 
 import https from 'https';
-import { mkdirSync, rmSync, renameSync } from 'fs';
+import { mkdirSync, rmSync } from 'fs';
 import { execSync } from 'child_process';
 import glob from 'glob';
 
