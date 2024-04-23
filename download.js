@@ -20,9 +20,13 @@ function fetchJSON(urlOrOptions) {
         res.on('data', (data) => {
           body += data;
         });
-        res.on('end', () => void resolve(JSON.parse(body)));
+        res.on('end', () => {
+          resolve(JSON.parse(body));
+        });
       })
-      .on('error', (error) => void reject(error));
+      .on('error', (error) => {
+        reject(error);
+      });
   });
 }
 

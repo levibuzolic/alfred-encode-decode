@@ -3,7 +3,7 @@ import type { EncoderType } from './encoders';
 import { cwd } from './qjs';
 
 export default class Result {
-  constructor(private type: EncoderType, private value?: string | undefined, public error?: Error | unknown) {}
+  constructor(private type: EncoderType, private value?: string | undefined, public error?: unknown) {}
 
   get item(): ScriptFilterItem {
     return {

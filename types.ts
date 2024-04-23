@@ -181,7 +181,7 @@ export interface ScriptFilterItem {
 	}
 	```
 	*/
-  // TODO (jopemachine): Activate attribute below after 'action' is implemented in Alfred.
+  // (jopemachine): Activate attribute below after 'action' is implemented in Alfred.
   // readonly action?: string | string[] | ActionElement;
 
   /**

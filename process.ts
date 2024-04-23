@@ -16,7 +16,7 @@ export default class Process {
   #run(): Result[] {
     const results = encoders.map((encoder) => {
       let result: string | undefined;
-      let error: Error | unknown | undefined;
+      let error: unknown;
       try {
         result = encoder[this.#mode](this.#value);
       } catch (e) {
@@ -39,7 +39,7 @@ export default class Process {
     return JSON.stringify(this.scriptFilters, null, 2);
   }
 
-  get errors(): { name: string; error: Error | unknown }[] {
+  get errors(): { name: string; error: unknown }[] {
     return this.#results.filter((r) => r.error != null).map(({ name, error }) => ({ name, error }));
   }
 }
